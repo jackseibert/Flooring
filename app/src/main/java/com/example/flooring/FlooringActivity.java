@@ -15,6 +15,7 @@ public class FlooringActivity extends AppCompatActivity {
     TextView tvResult;
     EditText etWidth;
     EditText etLength;
+    Flooring flooring;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,14 @@ public class FlooringActivity extends AppCompatActivity {
         tvResult = (TextView) findViewById(R.id.textViewResult);
         etWidth = (EditText) findViewById(R.id.editTextWidth);
         etLength = (EditText) findViewById(R.id.editTextLength);
+
+        //flooring = findViewById(R.id.textViewResult);
+
+        Bundle extras = getIntent().getExtras();
+        flooring = (Flooring)extras.getSerializable("Flooring");
+
+        //if(flooring.getLength() != 0 && flooring.getWidth() != 0) {
+            //tvResult.setText(flooring.toString());
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -36,10 +45,6 @@ public class FlooringActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
-        /*Bundle extras = getIntent().getExtras();
-        tvResult.setText("Width is " + (etWidth.getText().toString()) + " and Length is " + (etLength.getText().toString())
-        + " and flooring needed is ");*/
 
     }
 

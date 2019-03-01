@@ -11,11 +11,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     EditText etWidth;
     EditText etLength;
+    TextView tvResult;
     Button calcButton;
 
     @Override
@@ -25,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         etWidth = (EditText) findViewById(R.id.editTextWidth);
         etLength = (EditText) findViewById(R.id.editTextLength);
-
+        tvResult = (TextView) findViewById(R.id.textViewResult);
         calcButton = (Button) findViewById(R.id.buttonCalc);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -43,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
         calcButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Do something in response to button click
+                String widthText = etWidth.getText().toString();
+                String lengthText = etLength.getText().toString();
 
                 // Call the flooring activity using an intent
                 Intent detailActIntent = new Intent(v.getContext(), FlooringActivity.class);
