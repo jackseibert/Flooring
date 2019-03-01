@@ -45,14 +45,19 @@ public class MainActivity extends AppCompatActivity {
         calcButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Do something in response to button click
-                String widthText = etWidth.getText().toString();
-                String lengthText = etLength.getText().toString();
 
                 // Call the flooring activity using an intent
+                //Intent detailActIntent = new Intent(v.getContext(), FlooringActivity.class);
+                String widthText = etWidth.getText().toString();
+                String lengthText = etLength.getText().toString();
+                Flooring flooring = new Flooring(Integer.parseInt(etWidth.getText().toString()),
+                        Integer.parseInt(etLength.getText().toString()));
                 Intent detailActIntent = new Intent(v.getContext(), FlooringActivity.class);
-                detailActIntent.putExtra("etWidth", etWidth.getText().toString());
+                //Intent detailActIntent = new Intent(this, FlooringActivity.class);
+                detailActIntent.putExtra("Flooring", flooring);
+                //detailActIntent.putExtra("etWidth", etWidth.getText().toString());
                 //double width = Double.parseDouble(etWidth.getText().toString());
-                detailActIntent.putExtra("etLength", etLength.getText());
+                //detailActIntent.putExtra("etLength", etLength.getText());
                 //double length = Double.parseDouble(etLength.getText().toString());
                 startActivity(detailActIntent);
             }
