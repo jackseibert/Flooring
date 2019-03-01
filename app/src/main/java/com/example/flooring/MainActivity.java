@@ -18,8 +18,6 @@ public class MainActivity extends AppCompatActivity {
     EditText etLength;
     Button calcButton;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,8 +40,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
         calcButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Do something in response to button click
@@ -57,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(detailActIntent);
             }
         });
-
 
     }
 

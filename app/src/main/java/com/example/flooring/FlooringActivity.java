@@ -37,9 +37,6 @@ public class FlooringActivity extends AppCompatActivity {
             }
         });
 
-        Intent i = getIntent();
-        uriString = i.getStringExtra("text_label");
-
         /*Bundle extras = getIntent().getExtras();
         tvResult.setText("Width is " + (etWidth.getText().toString()) + " and Length is " + (etLength.getText().toString())
         + " and flooring needed is ");*/
